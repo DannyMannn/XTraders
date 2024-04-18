@@ -1,0 +1,49 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{%static 'users/stylesheet.css'%}"
+      type="text/css"
+    />
+    {% block cssPath %}{% endblock cssPath %}
+
+    <title>{%block title%} {%endblock title%}</title>
+
+  </head>
+<body>
+    <nav>
+        <div class="navbar">
+            <a class="brand-title" href="#"><img width="60px" height="60px" src="{% static 'users/icon.png' %}" alt="Icon"></a>
+            <a href="#" class="toggle-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+            </a>
+    
+            <div class="navbar-links">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Trade</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Sign in</a></li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="main-wrapper">
+      {% block body %} {% endblock body %}
+    </div>
+    <script>
+      const toggleButton = document.getElementsByClassName('toggle-button')[0]
+      const navbarLinks = document.getElementsByClassName('navbar-links')[0]
+
+      toggleButton.addEventListener('click', () => {
+        navbarLinks.classList.toggle('active')
+      })
+    </script>
+</body>
