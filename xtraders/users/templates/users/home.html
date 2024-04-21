@@ -2,7 +2,7 @@
 {% block title %} Home {% endblock title %} 
 {% block body %}
 <div>
-    <h1 class="padding-lg">¡Bienvenidos a XTraders! Una plataforma en línea de
+    <h1 class="padding-lg">¡Bienvenido {% if user.is_authenticated %}{{ user.nombre }}{% endif %} a XTraders! Una plataforma en línea de
         Trueques para litarlmente cualquier cosa ...
     </h1>
 

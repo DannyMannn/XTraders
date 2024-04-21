@@ -5,11 +5,21 @@
     margin: auto;
 }
 
+:root {
+    --primary-color: #99b8f7;
+    --primary-hover: #bed2fa;
+    --secondary-color: #a6ecfa;
+    --secondary-hover: #73d4e8;
+  }
 
 * {
     box-sizing: border-box;
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.center-text{
+    text-align: center;
 }
 
 body {
@@ -18,7 +28,7 @@ body {
 }
 
 nav{
-    background-color: #99b8f7;
+    background-color: var(--primary-color);
 }
 
 .navbar {
@@ -60,7 +70,7 @@ nav{
 }
 
 .navbar-links li:hover {
-    background-color: #bed2fa;
+    background-color: var(--primary-hover);
 }
 
 .toggle-button {
@@ -150,7 +160,7 @@ nav{
     padding: 20px;
     margin: 10px;
     overflow: auto;
-    background-color: #a6ecfa;
+    background-color: var(--secondary-color);
     border-radius: 5px;
     font-weight: bolder;
     line-height: 2rem;
@@ -167,3 +177,26 @@ nav{
 */
 
 /* CARDS END */
+
+
+
+
+
+/* BOTONES */
+
+.my-button-primary{
+    padding: 10px;
+    margin: 5px;
+    border-radius: 7px;
+    background-color: var(--secondary-color);
+    border: none;
+    font-weight: bolder;
+}
+
+.my-button-primary:hover{
+    background: var(--secondary-hover);
+    cursor: pointer;
+}
+
+
+/* BOTONES END*/

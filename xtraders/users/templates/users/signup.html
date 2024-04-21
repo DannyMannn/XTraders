@@ -1,0 +1,22 @@
+{% extends 'users/main_layout.html' %}
+
+{% load static %}
+
+{% block cssPath %} 
+  <link rel="stylesheet" href="{% static 'users/forms.css' %}"  type="text/css"/>
+{% endblock cssPath %}
+
+{% block title %}
+    Sign Up
+{% endblock title %}    
+
+{% block body %}
+<div class="main-wrapper">
+  <form class="form-background padding-lg" method="POST" action="{% url 'users:signup' %}" >
+    <h1 class="center-text">¡Regístrate Como Usuario!</h1>
+    {% csrf_token %}
+    {{ registro.as_p }}
+  <button class="my-button-primary main-wrapper" id="btnSubmit" type="submit" value="CreateUser">Crear usuario</button>
+</form>
+</div>
+{% endblock body %}

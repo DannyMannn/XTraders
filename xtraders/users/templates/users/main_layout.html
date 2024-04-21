@@ -27,10 +27,16 @@
     
             <div class="navbar-links">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Trade</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Sign in</a></li>
+                <li><a href="{%url 'users:home'%}">Home</a></li>
+                <li><a href="{%url 'users:trade'%}">Trade</a></li>
+                <li><a href="{%url 'users:about'%}">About</a></li>
+
+                {% if not user.is_authenticated %}
+                  <li><a href="{%url 'users:signup'%}">Sign up</a></li>
+                  <li><a href="{%url 'users:signin'%}">Log in</a></li>
+                {% else %}
+                  <li><a href="{%url 'users:signout'%}">Log out</a></li>
+                {% endif %}
             </ul>
             </div>
         </div>
