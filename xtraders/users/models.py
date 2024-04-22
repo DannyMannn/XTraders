@@ -52,10 +52,16 @@ CONDITION_CHOICES = (
     ('NUEVO','NUEVO'),
 )
 
+CATEGORIA_CHOICES = (
+    ('TALENTO/CONOCIMIENTO','TALENTO/CONOCIMIENTO'),
+    ('OBJETO MATERIAL', 'OBJETO MATERIAL'),
+    ('SERVICIO','SERVICIO'),
+)
+
 class Trade(models.Model):
     trader = models.ForeignKey('Trader', on_delete=models.CASCADE, null=True)
     titulo = models.CharField(max_length=100, default="Trade Producto")
-    categoria = models.CharField(max_length=200, default="")
+    categoria = models.CharField(max_length=200,choices=CATEGORIA_CHOICES, default="")
     condicion = models.CharField(max_length=20, choices=CONDITION_CHOICES, default='BUENA')
     descripcion = models.CharField(max_length=200, default="")
     intercambio_preferente = models.CharField(max_length=200, default="")

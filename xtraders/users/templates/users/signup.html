@@ -13,10 +13,11 @@
 {% block body %}
 <div class="main-wrapper">
   <form class="form-background padding-lg" method="POST" action="{% url 'users:signup' %}" >
-    <h1 class="center-text">¡Regístrate Como Usuario!</h1>
+    <h1 class="center-text padding-md">¡Regístrate Como Usuario!</h1>
     {% csrf_token %}
     {{ registro.as_p }}
-  <button class="my-button-primary main-wrapper" id="btnSubmit" type="submit" value="CreateUser">Crear usuario</button>
+
+  <button class="my-button-primary" id="btnSubmit" type="submit" value="CreateUser">Crear usuario</button>
 </form>
 </div>
 {% endblock body %}

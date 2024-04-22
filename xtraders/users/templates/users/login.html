@@ -1,5 +1,21 @@
-{% extends 'users/main_layout.html' %} 
-{% block title %} Login {% endblock title %} 
-{% block body %}
+{% extends 'users/main_layout.html' %}
 
+{% load static %}
+
+{% block cssPath %} 
+  <link rel="stylesheet" href="{% static 'users/forms.css' %}"  type="text/css"/>
+{% endblock cssPath %}
+
+{% block title %} Log in {% endblock title %} 
+
+{% block body %}
+<div class="main-wrapper">
+    <form class="form-background padding-lg" method="POST" action="{% url 'users:signin' %}" >
+        <h1 class="center-text padding-md">Ingresa a tu cuenta</h1>
+        {% csrf_token %}
+        {{ signinForm.as_p }}
+
+        <button class="my-button-primary" id="btnSubmit" type="submit" value="CreateUser">Log in</button>
+    </form>
+</div>
 {% endblock body %}

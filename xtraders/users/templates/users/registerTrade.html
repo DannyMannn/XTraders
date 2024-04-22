@@ -1,0 +1,19 @@
+{% extends 'users/main_layout.html' %} 
+
+{% load static %}
+
+{% block cssPath %} 
+  <link rel="stylesheet" href="{% static 'users/forms.css' %}"  type="text/css"/>
+{% endblock cssPath %}
+
+{% block title %} Registrar Trade {% endblock title %} 
+{% block body %}
+    <div class="main-wrapper">
+        <form class="form-background padding-lg" method="POST" action="{% url 'users:registerTrade' %}" enctype="multipart/form-data">
+            <h1 class="center-text padding-md">Registra tu servicio, talento u objeto material</h1>
+            {% csrf_token %}
+            {{tradeForm.as_p}}
+            <button class="my-button-primary" id="btnSubmit" type="submit" value="CreateTrade">Subir Trade</button>
+        </form>
+    </div>
+{% endblock body %}

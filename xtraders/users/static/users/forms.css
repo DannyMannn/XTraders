@@ -1,21 +1,35 @@
 .form-background{
-    background: #f2f2ef;
+    background: #fafaf7;
     border-radius: 10px;
     max-width: 50%;
     margin: auto;
+    line-height: 1.5rem;
 }
 
 .form-background input {
     display: block;
-    margin: 10px 0;
+    padding: 5px;
+    margin: 5px 0;
     width: 100%;
-    height: 3rem;
-    border-radius: 4px;
+    height: 2.5rem;
+    border: 2px solid #dadada;
+    border-radius: 7px;
     font-weight: bolder;
-  }
+}
+
+.form-background input:focus {
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+}
 
 form p{
-    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.glowing-border {
+    border: 2px solid #dadada;
+    border-radius: 7px;
 }
 
 @media (max-width: 800px) {
